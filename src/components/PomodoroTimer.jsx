@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 export default function PomodoroTimer() {
 
-    const [mins, setMins] = useState(0);
-    const [secs, setSecs] = useState(5);
+    const [mins, setMins] = useState(1);
+    const [secs, setSecs] = useState(0);
     const [message, setMessage] = useState(false);
     const [cycles, setCycles] = useState(0);
     const [cyclesMessage, setCyclesMessage] = useState(false);
@@ -36,6 +36,16 @@ export default function PomodoroTimer() {
                 }
             }else{
                 setSecs(secs - 1);
+            }
+
+            if(cycles === 4){
+                let mins = cyclesMessage ? 2 : 10;
+
+
+                setMessage(false)
+                setCycles(0)
+                setCyclesMessage(!cyclesMessage)
+                setMins(mins)
             }
         },1000)
     }, [mins, secs, message, cycles, cyclesMessage])
