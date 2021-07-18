@@ -11,7 +11,10 @@ export default function PomodoroTimer() {
   let timerMins = mins < 10 ? `0${mins}` : mins;
   let timerSecs = secs < 10 ? `0${secs}` : secs;
 
-  useEffect(() => {
+  //useEffect(() => {
+
+
+    
     if (isActive) {
       let interval = setInterval(() => {
         clearInterval(interval);
@@ -28,18 +31,16 @@ export default function PomodoroTimer() {
         } else {
           setSecs(secs - 1);
         }
-
-        // if (cycles === 4) {
-
-        //     let mins = cyclesMessage ? 2 : 1;
-
-        //     setMins(mins);
-        //     setCyclesMessage(!cyclesMessage);
-        //     setCycles(0);
-        //   } 
       }, 1000);
     }
-  }, [isActive, mins, secs, cycles, message, cyclesMessage]);
+    // else if( cycles === 4){
+    //     let mins = cyclesMessage ? 2 : 1;
+    //         setMins(mins);
+    //         setMessage(false);
+    //         setCyclesMessage(!cyclesMessage);
+    //         setCycles(0);
+    // }
+  //}, [isActive, mins, secs, cycles, message, cyclesMessage]);
 
   const handleStart = () => {
     setIsActive(!isActive);
