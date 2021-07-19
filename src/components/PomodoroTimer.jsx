@@ -13,33 +13,33 @@ export default function PomodoroTimer() {
 
   //useEffect(() => {
 
-
-    
-    if (isActive) {
-      let interval = setInterval(() => {
-        clearInterval(interval);
-        if (secs === 0) {
-          if (mins !== 0) {
-            setSecs(59);
-            setMins(mins - 1);
-          } else {
-              let mins = message ? 25 : 1;
-              setMins(mins);
-              setMessage(!message);
-              setCycles(cycles + 1);
-            }
+  if (isActive && cycles !== undefined) {
+    let interval = setInterval(() => {
+      clearInterval(interval);
+      if (secs === 0) {
+        if (mins !== 0) {
+          setSecs(59);
+          setMins(mins - 1);
+          setCycles(cycles + 1);
         } else {
-          setSecs(secs - 1);
+          if (mins === 0 && cycles === 4) {
+            let mins = cyclesMessage ? 2 : 1;
+            setMins(mins);
+            setCyclesMessage(!cyclesMessage);
+            setCycles(0);
+          }
+          if (mins === 0 && cycles !== 4) {
+            let mins = message ? 3 : 1;
+            setMins(mins);
+            setMessage(!message);
+          }
         }
-      }, 1000);
-    }
-    // else if( cycles === 4){
-    //     let mins = cyclesMessage ? 2 : 1;
-    //         setMins(mins);
-    //         setMessage(false);
-    //         setCyclesMessage(!cyclesMessage);
-    //         setCycles(0);
-    // }
+      } else {
+        setSecs(secs - 1);
+      }
+    }, 1000);
+  }
+
   //}, [isActive, mins, secs, cycles, message, cyclesMessage]);
 
   const handleStart = () => {
