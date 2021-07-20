@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ToDoComponent() {
+export default function StatusComponent() {
     return (
         <div>
             
