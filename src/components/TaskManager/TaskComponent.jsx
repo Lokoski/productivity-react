@@ -3,7 +3,7 @@ import Status from "./StatusComponent"
 
 export default function TaskComponent() {
 
-    const [task, setTask] = useState([]);
+    const [tasks, setTasks] = useState([]);
 
 
 
@@ -33,21 +33,21 @@ export default function TaskComponent() {
   return <div className="task-container">
       <h1>Task Manager</h1>
       <Status 
-          task={task}
+          tasks={tasks}
           addTask={addTask}
           deleteTask={deleteTask}
           moveTask={moveTask}
           status='Backlog'
       />
        <Status 
-          task={task}
+          tasks={tasks}
           addTask={addTask}
           deleteTask={deleteTask}
           moveTask={moveTask}
           status='In Progress'
       />
        <Status 
-          task={task}
+          tasks={tasks}
           addTask={addTask}
           deleteTask={deleteTask}
           moveTask={moveTask}

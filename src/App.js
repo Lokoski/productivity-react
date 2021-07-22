@@ -1,11 +1,11 @@
 import './App.css';
-import Pomodoro from './components/PomodoroTimer/PomodoroTimer'
+import Timer from './components/PomodoroTimer/Timer'
 import TaskManager from './components/TaskManager/TaskComponent'
 
 function App() {
   return (
     <div className="App">
-      <Pomodoro />
+      <Timer />
       <TaskManager />
     </div>
   );
