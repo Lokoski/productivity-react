@@ -5,7 +5,7 @@ function Timer() {
     const [mins, setMins] = useState(1);
     const [secs, setSecs] = useState(0);
     const [message, setMessage] = useState(false);
-    const [cycles, setCycles] = useState(2);
+    const [cycles, setCycles] = useState(4);
     const [cyclesMessage, setCyclesMessage] = useState(false);
     const [isActive, setIsActive] = useState(false);
   
@@ -19,8 +19,13 @@ function Timer() {
             if (mins !== 0) {
               setSecs(59);
               setMins(mins - 1);
-              setCycles(cycles + 1);
             }else{
+              if(cycles === 4){
+                setMins(1);
+                setCyclesMessage(!cyclesMessage);
+                setCycles(0);
+                setMessage(false)
+              }
               showShortBreak();
             }
           }else {
@@ -29,19 +34,30 @@ function Timer() {
         }, 1000);
       }
 
+      // if(isActive && cycles === 4){
+      //   let interval = setInterval(() =>{
+      //     clearInterval(interval);
+      //     if (secs === 0) {
+      //       if (mins !== 0) {
+      //         setSecs(59);
+      //         setMins(mins - 1);
+      //       }else{
+      //         setMins(1);
+      //         setCyclesMessage(!cyclesMessage);
+      //         setCycles(0);
+      //         setMessage(false)
+      //       }
+      //     }else {
+      //       setSecs(secs - 1);
+      //     }
+      //   }, 1000)
+      // }
+
       const showShortBreak = () =>{
         let mins = message ? 3 : 1;
         setMins(mins);
         setMessage(!message);
       }
-    
-      const showLongBreak = () =>{
-        let mins = cyclesMessage ? 1 : 2;
-        setMins(mins);
-        setCyclesMessage(!cyclesMessage);
-        setCycles(0);
-      }
-    
     
       const handleStart = () => {
         setIsActive(!isActive);
