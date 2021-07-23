@@ -20,13 +20,7 @@ function Timer() {
               setSecs(59);
               setMins(mins - 1);
             }else{
-              if(cycles === 4){
-                setMins(1);
-                setCyclesMessage(!cyclesMessage);
-                setCycles(0);
-                setMessage(false)
-              }
-              showShortBreak();
+             cycles === 4 ? showLongBreak() && setIsActive(false): showShortBreak()  && setCycles(cycles + 1) ;
             }
           }else {
             setSecs(secs - 1);
@@ -57,6 +51,13 @@ function Timer() {
         let mins = message ? 3 : 1;
         setMins(mins);
         setMessage(!message);
+      }
+
+      const showLongBreak = () =>{
+        setMins(1);
+        setMessage(false);
+        setCyclesMessage(!cyclesMessage);
+        setCycles(0)
       }
     
       const handleStart = () => {
