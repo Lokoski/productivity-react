@@ -10,15 +10,15 @@ export default function TaskComponent() {
 
     useEffect(() => {},[])
 
-    const addTask = () =>{
+    const addTask = (taskToAdd) =>{
 
     }
 
-    const deleteTask = () =>{
+    const deleteTask = (taskId) =>{
 
     }
 
-    const moveTask = () =>{
+    const moveTask = (taskId) =>{
 
     }
 
