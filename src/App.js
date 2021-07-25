@@ -5,7 +5,6 @@ import TaskManager from './components/TaskManager/TaskComponent'
 function App() {
   return (
     <div className="App">
-      <Timer />
       <TaskManager />
     </div>
   );

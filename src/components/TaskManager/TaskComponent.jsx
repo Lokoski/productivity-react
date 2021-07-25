@@ -87,7 +87,9 @@ export default function TaskComponent() {
 
   return <div className="task-container">
       <h1>Task Manager</h1>
-      <Status 
+      <main>
+          <section>
+          <Status 
           tasks={tasks}
           addEmptyTask={addEmptyTask}
           addTask={addTask}
@@ -111,5 +113,7 @@ export default function TaskComponent() {
           moveTask={moveTask}
           status='Completed'
       />
+          </section>
+      </main>
   </div>;
 }

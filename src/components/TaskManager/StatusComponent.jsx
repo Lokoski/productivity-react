@@ -28,10 +28,10 @@ const StatusComponent = (props) => {
         })
     }
     return (
-        <div className="status">
+        <div className="statusLine">
             <h3>{status}</h3>
             {taskList}
-            <button onClick={handleEmptyTask}className="button">+</button>
+            <button onClick={handleEmptyTask} className="button addTask">+</button>
         </div>
     )
 }

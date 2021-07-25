@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import "../../App.css";
 
 const Tasks = (props) => {
-    const [addTask, deleteTask, moveTask, task] = props;
+    const {addTask, deleteTask, moveTask, task} = props;
 
     const [urgencyLvl, setUrgencyLvl] = useState(task.urgency);
 
@@ -98,7 +99,7 @@ const Tasks = (props) => {
                         onChange={setUrgency}
                         type="radio"
                         name="urgency"
-                    />low
+                    />medium
                     </label>
                     <label className={`high ${urgencyLvl === "high" ? "selected" : ""}`} >
                      <input
