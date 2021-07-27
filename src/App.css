@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --blue: #132743;
+    --grey: #686d76;
+    --white: #eeecda;
+    --gold: #edc988;
+    --green: #9ad3bc;
+    --yellow: #edf285;
+    --pink: #ffa5a5;
+    --red: #ff8282;
+    --highlight: #2ec1ac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Kanit", sans-serif;
+    background-color: var(--blue);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 2rem 0;
+    font-weight: 400;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--green);
+    align-items: center;
+    width: fit-content;
+  }
+  
+  section {
+    display: flex;
+    width: 70rem;
+    margin-bottom: 2rem;
+  }
+  
+  .button {
+    border: 1px solid var(--gold);;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0.3rem 1.5rem;
+    background-color: var(--green);
+    border-color: var(--green);
+    color: var(--blue);
+    font-weight: 500;
+    font-family: "Kanit", sans-serif;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-right: 0.25rem;
+  }
+
+  .button:hover {
+    background-color: var(--highlight);
+    border-color: var(--highlight);;
+    cursor: pointer;
+  }
+  
+  .button:focus {
+    outline: none;
+    border-color: var(--highlight);;
+    background-color: var(--highlight);
+    color: var(--white);;
+  }
+
+  .addTask {
+    font-size: 3rem;
+    padding: 0 0 0.4rem 0;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 1rem;
+    margin-top: 2rem;
+  }
+
+  .moveTask {
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 0;
+    line-height: 1rem;
+  }
+
+
+  .delete {
+    background-color: var(--pink);
+    border-color: var(--pink);
+  }
+
+
+  .delete:hover {
+    background-color: var(--red);;
+    border-color: var(--red);;
+  }
+
+
+  @media only screen and (max-width: 75rem) {
+    section {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  .collapsedTask > .moveTask {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.5rem;
+  }
+
+  .input {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: var(--white);
+    text-align: center;
+    resize: none;
+    display: flex;
+    font-family: "Kanit", sans-serif;
+  }
+
+  .input:hover {
+    cursor: pointer;
+    border: 1px solid var(--white);
+  }
+
+  .input :focus {
+    outline: none;
+    border-color: var(--gold);
+    color:var(--gold);
+  }
+
+  .input::placeholder {
+    color: var(--white);
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+
+  .title:hover {
+    cursor: text;
+  }
+
+  .description {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+
+   
+  }
+
+  .description :hover {
+    cursor: text;
+  }
+
+  .urgencyLabels {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .icon {
+    font-size: 1.25rem;
+    margin-right: 0.25rem;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: inline-block;
+  }
+
+  label > input {
+    display: none;
+  }
+
+  .low {
+    background-color: var(--green);
+  }
+  
+  .low:hover {
+    cursor: pointer;
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+  }
+
+  .medium {
+    background-color: var(--yellow);
+  }
+
+  .medium:hover {
+    cursor: pointer;
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+  }
+
+  .high {
+    background-color: var(--pink);
+  }
+  .high:hover {
+    cursor: pointer;
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+  }
+
+  label > .selected {
+    font-weight: 700;
+  }
+
+
+    label {
+      color: var(--blue);
+      padding: 0.05rem 0.5rem;
+      margin: 0 0.25rem;
+      text-transform: uppercase;
+      border-radius: 0.25rem;
+    }
+
+    .collapsed {
+        flex-direction: row;
+        align-content: center;
+      }
+
+      .title {
+        margin: 0;
+      }
+      .title:hover {
+        border-color: transparent;
+        cursor: default;
+      }
+
+      .button {
+        padding: 0.025rem 0.5rem;
+
+        
+      }
+
+      .button > .moveTask {
+        background-color: red;
+      }
+
+      .collapsed:hover .button {
+        display: inline-block;
+      }
+
+
+
+  .task {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid var(--white);
+    border-radius: 0.25rem;
+  }
+
+     
+  form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 0 0.25rem;
+
+
+  }
+
+  .urgencyLabels {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .description,
+  label {
+    display: none;
+  }
+
+  label.selected {
+    display: inline-block;
+    font-weight: 500;
+  }
